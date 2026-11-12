@@ -1,0 +1,143 @@
+inline Prj: TScriboProject
+  Align = alClient
+  AutoScroll = True
+  ProjectWidth = 605
+  ProjectHeight = 618
+  DesignSize = (
+    605
+    618)
+  object ScriboPages: TVizPageControl
+    Left = 0
+    Top = 0
+    Width = 605
+    Height = 618
+    ActivePage = ScriboPage1
+    Align = alClient
+    TabOrder = 0
+    ExplicitHeight = 620
+    object ScriboPage1: TVizTabSheet
+      Caption = 'List 1'
+      ExplicitTop = 16
+      ExplicitHeight = 592
+      object VizPanel1: TVizPanel
+        Left = 32
+        Top = 16
+        Width = 49
+        Height = 25
+        BevelInner = bvLowered
+        Color = clInfoBk
+        TabOrder = 0
+        Style = vsPanel
+        DataVizItem.VizData = FScribo.VizData
+        DataVizItem.Signal = 4201
+        DataVizItem.SignalPrecison = 0
+        ShowValue = True
+      end
+      object VizPanel2: TVizPanel
+        Left = 32
+        Top = 88
+        Width = 49
+        Height = 25
+        BevelInner = bvLowered
+        Color = clInfoBk
+        TabOrder = 1
+        Style = vsPanel
+        DataVizItem.VizData = FScribo.VizData
+        DataVizItem.Signal = 5002
+        DataVizItem.SignalPrecison = 0
+        ShowValue = True
+      end
+      object VizPanel3: TVizPanel
+        Left = 32
+        Top = 120
+        Width = 49
+        Height = 25
+        BevelInner = bvLowered
+        Color = clInfoBk
+        TabOrder = 2
+        Style = vsPanel
+        DataVizItem.VizData = FScribo.VizData
+        DataVizItem.Signal = 5102
+        DataVizItem.SignalPrecison = 0
+        ShowValue = True
+      end
+      object VizPanel4: TVizPanel
+        Left = 32
+        Top = 152
+        Width = 49
+        Height = 25
+        BevelInner = bvLowered
+        Color = clInfoBk
+        TabOrder = 3
+        Style = vsPanel
+        DataVizItem.VizData = FScribo.VizData
+        DataVizItem.Signal = 5302
+        DataVizItem.SignalPrecison = 0
+        ShowValue = True
+      end
+      object OnOffBtn1: TVizPanel
+        Left = 185
+        Top = 16
+        Width = 79
+        Height = 76
+        BorderStyle = bsSingle
+        Color = clWindow
+        TabOrder = 4
+        ImageIndex = 0
+        Style = vsIndic
+        DataVizItem.VizData = FScribo.VizData
+        DataVizItem.Signal = 502902
+        DataVizItem.ReadOnly = False
+        DataVizItem.BooleanLowText = 'Off'
+        DataVizItem.BooleanHighText = 'On'
+        ShowValue = False
+      end
+      object OnOffBtn2: TVizPanel
+        Left = 280
+        Top = 16
+        Width = 58
+        Height = 58
+        BorderStyle = bsSingle
+        Color = clWindow
+        TabOrder = 5
+        ImageIndex = 0
+        Style = vsButton
+        DataVizItem.VizData = FScribo.VizData
+        DataVizItem.Signal = 501301
+        DataVizItem.ReadOnly = False
+        DataVizItem.BooleanLowText = 'Off'
+        DataVizItem.BooleanHighText = 'On'
+        ShowValue = True
+      end
+    end
+  end
+  object VizDrvDbNet: TVizualDriverDbNet
+    ID = 20
+    VizualData = FScribo.VizData
+    OnTick = VizDrvDbNetTick
+    Variables = <
+      item
+        Name = 'IntData'
+        WID = 510
+        Station = 1
+        DataType = dbnIntMtx
+        RowCount = 23
+      end>
+    DbnConfig.Com = 'COM8'
+    DbnConfig.Host = '192.168.97.10'
+    TimeStation = 0
+    TimeMode = tmIdle
+    Left = 168
+    Top = 200
+  end
+  object VizLogger: TVizLogger
+    RootDir = 'C:\Users\noga.matej\Desktop\nove.DATA'
+    Items = <>
+    DataSet = FScribo.DBFLog
+    UTC = True
+    DataTable = 'yyyy_mm"\Data_"yy_mm_dd".dbf"'
+    EventTable = 'yyyy_mm"\Events_"yy_mm".dbf"'
+    Left = 312
+    Top = 200
+  end
+end
